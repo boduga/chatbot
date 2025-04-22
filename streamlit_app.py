@@ -65,7 +65,7 @@ if prompt := st.chat_input("What is up?"):
 
     # Store and display the current prompt.
     # Store as 'user' role for display purposes
-    st.session_state.messages.append({"role": "user", "content": prompt + ". The user selected " + selected_data_source})
+    st.session_state.messages.append({"role": "user", "content": prompt + ". The user selected "})
     with st.chat_message("user"):
         st.markdown(prompt)
 
