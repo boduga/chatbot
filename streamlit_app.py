@@ -2,6 +2,17 @@ import streamlit as st
 # Import the Google Generative AI library
 import google.generativeai as genai
 
+# Siebar with a dropdown to select data source
+st.sidebar.title("Select Data Source")
+selected_data_source = st.sidebar.selectbox(
+    "Select a dataset",
+    ("Table A", "Table B")
+)
+
+# Write the selected data source to the main page
+st.write(f"You selected: {selected_data_source}")
+
+
 # Show title and description.
 st.title("💬 Chatbot")
 st.write(
@@ -66,7 +77,7 @@ else:
 
         # Store and display the current prompt.
         # Store as 'user' role for display purposes
-        st.session_state.messages.append({"role": "user", "content": prompt})
+        st.session_state.messages.append({"role": "user", "content": prompt + ". The user selected " + selected_data_source})
         with st.chat_message("user"):
             st.markdown(prompt)
 
