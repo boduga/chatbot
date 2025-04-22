@@ -1,0 +1,9 @@
+[project]
+name = "streamlit-google-generative-ai"
+description = "Streamlit app for Google Generative AI"
+version = "0.1.0"
+readme = "README.md"
+dependencies = [
+    "google-generativeai",
+    "streamlit"
+]
