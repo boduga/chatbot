@@ -27,7 +27,12 @@ st.write(
 # via `st.secrets`, see https://docs.streamlit.io/develop/concepts/connections/secrets-management
 
 # Configure the Google Generative AI client.
-genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
+try:
+    api_key = st.secrets["GOOGLE_API_KEY"]
+    genai.configure(api_key=api_key)
+except KeyError:
+    st.error("The 'GOOGLE_API_KEY' is missing in your secrets configuration. Please add it to the .streamlit/secrets.toml file.")
+    st.stop()
 
 # Choose the model - gemini-pro is suitable for text chat
 # You might check available models with genai.list_models()
