@@ -7,5 +7,5 @@ dependencies = [
     "google-generativeai",
     "streamlit",
     "langchain",
-    "langchain-google-generative-ai"
+    "langchain-google-genai"
 ]
