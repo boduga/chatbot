@@ -33,3 +33,5 @@ retrieval_prompt = retrieval_prompt.partial(
 )
 
 #chain
+retrieval_prompt | llm | StrOutputParser()
+
