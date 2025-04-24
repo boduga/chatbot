@@ -21,3 +21,15 @@ llm = ChatGoogleGenerativeAI(
     api_key=st.secrets["GOOGLE_API_KEY"]
 )
 
+# prompts
+retrieval_prompt = PromptTemplate.from_template(
+    '''
+Based on the following input: '{input}', create the appropriate query to filter and return results from a python dataframe (df.query()).
+The dataframe contains the following columns: '{columns}'. Only return the query string without any additional text.
+'''
+)
+retrieval_prompt = retrieval_prompt.partial(
+    columns=(df.columns)
+)
+
+#chain
