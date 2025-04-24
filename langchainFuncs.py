@@ -1,4 +1,5 @@
 import streamlit as st
+<<<<<<< HEAD
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 
@@ -35,3 +36,17 @@ messages = [
 response = chain.invoke(messages)
 print("Full LLM Response: ", response)
 print("LLM Response Content: ", response.content)
+=======
+from langchain.chat_models import ChatGoogleGenerativeAI
+from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
+
+# Use your Gemini API key from Streamlit secrets
+api_key = st.secrets["GOOGLE_API_KEY"]
+
+# Initialize the chat model
+chain = ChatGoogleGenerativeAI(
+    model="gemini-pro",  # Gemini 1.5 Pro; use "gemini-1.5-pro" if supported
+    temperature=0.7,
+    google_api_key=api_key
+)
+>>>>>>> 5f25af3cbccc925355c8a2efb0e6f5649beef83f
