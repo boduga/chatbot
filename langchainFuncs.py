@@ -35,6 +35,7 @@ messages = [
 
 response = chain.invoke(messages)
 print("Full LLM Response: ", response)
+<<<<<<< HEAD
 print("LLM Response Content: ", response.content)
 =======
 from langchain.chat_models import ChatGoogleGenerativeAI
@@ -50,3 +51,6 @@ chain = ChatGoogleGenerativeAI(
     google_api_key=api_key
 )
 >>>>>>> 5f25af3cbccc925355c8a2efb0e6f5649beef83f
+=======
+print("LLM Response Content: ", response.content)
+>>>>>>> d4de73f (feat: implement revenue data handling and integrate with Google Generative AI)
