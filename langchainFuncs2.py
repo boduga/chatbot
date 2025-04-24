@@ -33,5 +33,9 @@ retrieval_prompt = retrieval_prompt.partial(
 )
 
 #chain
-retrieval_prompt | llm | StrOutputParser()
+chain = retrieval_prompt | llm | StrOutputParser()
 
+# run
+user_input = {"input": "What is the total revenue for each month?"}
+response = chain.invoke(user_input)
+print(response)
